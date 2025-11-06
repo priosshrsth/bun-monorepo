@@ -1,11 +1,18 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["ultracite/core", "ultracite/next", "ultracite/react"],
+  "extends": ["ultracite/core", "ultracite/react"],
   "root": true,
   "linter": {
     "rules": {
+      "a11y": {
+        "noSvgWithoutTitle": "off"
+      },
+      "correctness": {
+        "useImageSize": "off"
+      },
       "performance": {
-        "noBarrelFile": "off"
+        "noBarrelFile": "on",
+        "useTopLevelRegex": "off"
       },
       "nursery": {
         "noIncrementDecrement": "off"
@@ -14,7 +21,7 @@
         "useConsistentTypeDefinitions": {
           "level": "error",
           "options": {
-            "style": "interface"
+            "style": "type"
           }
         },
         "noRestrictedImports": {

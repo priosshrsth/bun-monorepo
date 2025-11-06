@@ -45,7 +45,13 @@ export default function Home() {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Image alt="Vercel logomark" className={styles.logo} height={20} src="/vercel.svg" width={20} />
+            <Image
+              alt="Vercel logomark"
+              className={styles.logo}
+              height={20}
+              src="/vercel.svg"
+              width={20}
+            />
             Deploy now
           </a>
           <a
@@ -67,11 +73,27 @@ export default function Home() {
           rel="noopener noreferrer"
           target="_blank"
         >
-          <Image alt="Window icon" aria-hidden height={16} src="/window.svg" width={16} />
+          <Image
+            alt="Window icon"
+            aria-hidden
+            height={16}
+            src="/window.svg"
+            width={16}
+          />
           Examples
         </a>
-        <a href="https://turborepo.com?utm_source=create-turbo" rel="noopener noreferrer" target="_blank">
-          <Image alt="Globe icon" aria-hidden height={16} src="/globe.svg" width={16} />
+        <a
+          href="https://turborepo.com?utm_source=create-turbo"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <Image
+            alt="Globe icon"
+            aria-hidden
+            height={16}
+            src="/globe.svg"
+            width={16}
+          />
           Go to turborepo.com →
         </a>
       </footer>
