@@ -1,6 +1,9 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "extends": ["ultracite/core", "ultracite/react"],
+  "files": {
+    "includes": ["**/*", "!dist", "!.next"]
+  },
   "linter": {
     "rules": {
       "a11y": {
@@ -53,6 +56,12 @@
     "parser": {
       "allowComments": true
     },
+    "formatter": {
+      "indentStyle": "space",
+      "indentWidth": 2
+    }
+  },
+  "css": {
     "formatter": {
       "indentStyle": "space",
       "indentWidth": 2
