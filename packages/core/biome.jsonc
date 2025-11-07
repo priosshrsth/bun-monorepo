@@ -1,0 +1,12 @@
+{
+	"$schema": "../../node_modules/@biomejs/biome/configuration_schema.json",
+	"root": false,
+	"linter": {
+		"rules": {
+			"performance": {
+				"noBarrelFile": "off",
+				"useTopLevelRegex": "on"
+			}
+		}
+	}
+}
