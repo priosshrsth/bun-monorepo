@@ -1,6 +1,5 @@
 import type { ChangeEvent, Dispatch, SetStateAction } from "react";
 
-// biome-ignore lint/style/useConsistentTypeDefinitions: <use type>
 export type IBaseSearchQuery = {
 	page: number;
 	limit: number;

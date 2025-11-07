@@ -27,7 +27,6 @@ export function SearchQueryProvider<T extends IBaseSearchQuery>({
 
 	const [total, setTotal] = useState(0);
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <need only on mount>
 	useEffect(() => {
 		if (!syncWithUrl) {
 			return;
