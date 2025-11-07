@@ -3,9 +3,9 @@
 	"compilerOptions": {
 		"types": ["vite/client"],
 		"outDir": "dist",
-		"strictNullChecks": true
+		"strictNullChecks": true,
+		"baseUrl": "."
 	},
 	"include": ["lib"],
-	"exclude": ["node_modules", "dist"],
-	"baseUrl": "."
+	"exclude": ["node_modules", "dist"]
 }
