@@ -2,7 +2,7 @@
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "extends": ["ultracite/core", "ultracite/react"],
   "files": {
-    "includes": ["**/*", "!dist", "!.next"]
+    "includes": ["**/*", "!dist", "!.next", "vite.config.ts"]
   },
   "linter": {
     "rules": {
@@ -44,27 +44,23 @@
     "enabled": true,
     "useEditorconfig": true,
     "formatWithErrors": true,
-    "lineWidth": 120
+    "lineWidth": 120,
+    "indentStyle": "space",
+    "indentWidth": 2
   },
   "javascript": {
     "formatter": {
-      "indentStyle": "space",
       "bracketSpacing": true
     }
   },
   "json": {
     "parser": {
       "allowComments": true
-    },
-    "formatter": {
-      "indentStyle": "space",
-      "indentWidth": 2
     }
   },
   "css": {
-    "formatter": {
-      "indentStyle": "space",
-      "indentWidth": 2
+    "parser": {
+      "tailwindDirectives": true
     }
   }
 }
