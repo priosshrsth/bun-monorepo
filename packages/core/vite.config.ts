@@ -2,13 +2,13 @@ import { resolve } from "node:path";
 import react from "@vitejs/plugin-react-swc";
 
 import preserveDirectives from "rollup-preserve-directives";
-import { defineConfig } from "vite";
+import { defineConfig, type UserConfig } from "vite";
 import dts from "vite-plugin-dts";
 import tsconfigPaths from "vite-tsconfig-paths";
 
-export default defineConfig(() => {
+const config = defineConfig(() => {
   const isWatch = process.argv.includes("--watch");
-  return {
+  const userConfig: UserConfig = {
     plugins: [
       react(),
       tsconfigPaths(),
@@ -19,10 +19,31 @@ export default defineConfig(() => {
         root: "./",
       }),
     ],
-    lib: {
-      entry: resolve(__dirname, "lib/index.ts"),
-      formats: ["es"],
-      rolldownOptions: {},
+    build: {
+      sourcemap: true,
+      emptyOutDir: true,
+      lib: {
+        entry: resolve(__dirname, "lib/index.ts"),
+        formats: ["es"],
+      },
+      rollupOptions: {
+        output: {
+          dir: "dist",
+          preserveModules: true,
+          preserveModulesRoot: "lib",
+          assetFileNames: "assets/[name][extname]",
+          entryFileNames: "[name].js",
+        },
+        external: [
+          "react",
+          "react-dom",
+          "react/jsx-runtime",
+          "react/jsx-runtime",
+          "react/jsx-dev-runtime",
+          "lodash",
+          "clsx",
+        ],
+      },
     },
     ...(isWatch
       ? {
@@ -32,17 +53,9 @@ export default defineConfig(() => {
           },
         }
       : {}),
-    rollupOptions: {
-      output: {
-        dir: "dist",
-        preserveModules: true,
-        preserveModulesRoot: "lib",
-        assetFileNames: "assets/[name][extname]",
-        entryFileNames: "[name].js",
-      },
-      external: ["react", "react-dom", "react/jsx-runtime", "react/jsx-runtime", "react/jsx-dev-runtime", "lodash"],
-    },
-    sourcemap: true,
-    emptyOutDir: true,
   };
+
+  return userConfig;
 });
+
+export default config;
