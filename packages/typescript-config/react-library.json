@@ -10,7 +10,7 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
 
-    "moduleResolution": "bundler",
+    "moduleResolution": "Bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",

@@ -4,14 +4,15 @@ import react from "@vitejs/plugin-react-swc";
 import preserveDirectives from "rollup-preserve-directives";
 import { defineConfig, type UserConfig } from "vite";
 import dts from "vite-plugin-dts";
-import tsconfigPaths from "vite-tsconfig-paths";
 
 const config = defineConfig(() => {
   const isWatch = process.argv.includes("--watch");
   const userConfig: UserConfig = {
+    resolve: {
+      tsconfigPaths: true,
+    },
     plugins: [
       react(),
-      tsconfigPaths(),
       preserveDirectives(),
       dts({
         include: ["lib"],
@@ -42,6 +43,7 @@ const config = defineConfig(() => {
           "react/jsx-dev-runtime",
           "lodash",
           "clsx",
+          // "dialog-closedby-polyfill",
         ],
       },
     },

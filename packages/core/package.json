@@ -27,7 +27,7 @@
   "scripts": {
     "dev": "vite build --watch",
     "tsc": "tsc --noEmit",
-    "build": "tsc -b && bunx --bun vite build",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "bun run vite preview",
     "prepublishOnly": "bun run build"
@@ -48,8 +48,7 @@
     "typescript": "catalog:",
     "typescript-eslint": "^8.45.0",
     "vite": "catalog:",
-    "vite-plugin-dts": "catalog:",
-    "vite-tsconfig-paths": "catalog:"
+    "vite-plugin-dts": "catalog:"
   },
   "dependencies": {
     "dialog-closedby-polyfill": "^1.1.0"
