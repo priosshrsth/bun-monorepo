@@ -1,11 +1,20 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["ultracite/core", "ultracite/next", "ultracite/react"],
-  "root": true,
+  "extends": ["ultracite/core", "ultracite/react"],
+  "files": {
+    "includes": ["**/*", "!dist", "!.next", "vite.config.ts"]
+  },
   "linter": {
     "rules": {
+      "a11y": {
+        "noSvgWithoutTitle": "off"
+      },
+      "correctness": {
+        "useImageSize": "off"
+      },
       "performance": {
-        "noBarrelFile": "off"
+        "noBarrelFile": "on",
+        "useTopLevelRegex": "off"
       },
       "nursery": {
         "noIncrementDecrement": "off"
@@ -14,7 +23,7 @@
         "useConsistentTypeDefinitions": {
           "level": "error",
           "options": {
-            "style": "interface"
+            "style": "type"
           }
         },
         "noRestrictedImports": {
@@ -35,18 +44,23 @@
     "enabled": true,
     "useEditorconfig": true,
     "formatWithErrors": true,
-    "lineWidth": 120
+    "lineWidth": 120,
+    "indentStyle": "space",
+    "indentWidth": 2
   },
   "javascript": {
     "formatter": {
-      "indentStyle": "space",
       "bracketSpacing": true
     }
   },
   "json": {
     "parser": {
-      "allowComments": true,
-      "allowTrailingCommas": true
+      "allowComments": true
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
     }
   }
 }

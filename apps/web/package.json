@@ -14,13 +14,19 @@
     "@repo/ui": "*",
     "next": "catalog:",
     "react": "catalog:",
-    "react-dom": "catalog:"
+    "react-dom": "catalog:",
+    "@rnt-lib/core": "*"
   },
   "devDependencies": {
     "@repo/typescript-config": "*",
+    "@tailwindcss/postcss": "catalog:",
+    "@types/bun": "catalog:types",
     "@types/node": "catalog:types",
     "@types/react": "catalog:types",
     "@types/react-dom": "catalog:types",
+    "lodash": "catalog:",
+    "postcss": "catalog:",
+    "tailwindcss": "catalog:",
     "typescript": "catalog:"
   }
 }
